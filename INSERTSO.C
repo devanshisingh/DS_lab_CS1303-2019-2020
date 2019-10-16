@@ -29,6 +29,29 @@ printf("Sorting using Insertion Sort :: ");
 display(a,n);
 }
 
+void select_sort(int a[], int n)
+{
+	int i, j pos, t;
+	for(i=0; i<n-1; i++)
+	{
+		pos = i;
+		for(j=i+1; j<n; j++)
+		{
+			if(a[pos] > a[j])
+				pos = j;
+		}
+		if(pos != i)
+		{
+			t = a[i];
+			a[i] = a[pos];
+			a[pos] = a[i];
+		}
+	}
+	printf("Sorting using Selection Sort :: ");
+	display(a,n);
+}
+
+
 void main()
 {
   int n, a[10], i;
